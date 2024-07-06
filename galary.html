@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Responsive Navigation Bar</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: Arial, sans-serif;
+    }
+
+    .navbar {
+      background-color: rgba(187, 187, 187, 0.103);
+      backdrop-filter: blur(5px);
+      padding: 20px 20px;
+      position: fixed;
+      width: 100vw;
+      z-index: 100;
+      color: white;
+      display: flex;
+      justify-content: space-evenly;
+      gap: 100px;
+    }
+
+    .navbar ul {
+      list-style-type: none;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      justify-content: center;
+    }
+
+    .navbar li {
+      margin: 0 15px;
+      font-weight: bold;
+      color: white;
+    }
+
+    .navbar a {
+      text-decoration: none;
+      color: #ffffff;
+      font-size: 18px;
+      transition: color 0.3s ease;
+    }
+
+    .navbar a:hover {
+      color: #00f1c9;
+    }
+
+    @media screen and (max-width: 768px) {
+      .navbar {
+        padding: 10px;
+      }
+
+      .navbar ul {
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .navbar li {
+        margin: 10px 0;
+      }
+    }
+
+    .main {
+      width: 95vw;
+      height: 100vh;
+      display: flex;
+      justify-content: space-around;
+      flex-wrap: wrap;
+      gap: 50px;
+      position: absolute;
+      top: 120px;
+      align-items: center;
+      position:relative;
+      z-index: 2;
+      background-color: transparent;
+    }
+
+    .boxes {
+      height: 240px;
+      aspect-ratio: 16 / 9;
+      transition: all .5s;
+      border-radius: 20px;
+      position:relative;
+      z-index: 4;
+      box-shadow: 4px 4px 30px 1px;
+
+    }
+
+    .boxes:hover {
+      transform: scale(1.15);
+
+    }
+
+    .boxes>img {
+      height: 100%;
+      width: 100%;
+      object-fit: cover;
+      overflow: hidden;
+      border-radius: 20px;
+    }
+
+    .main2 {
+      width: 100vw;
+      align-items: center;
+      display: flex;
+      justify-content: center;
+      overflow-x: hidden;
+      position: relative;
+      z-index: 1;
+      background-color: transparent;
+
+    }
+
+    .loginreg {
+      width: 150px;
+      justify-content: space-between;
+      display: flex;
+      width: 300px;
+    }
+
+    .loginreg>p {
+      font-weight: bold;
+      font-size: 18px;
+    }
+
+
+video{
+  position: fixed;
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+  pointer-events: none;
+  z-index: 2;
+  filter: blur(5px);
+}
+  </style>
+</head>
+
+<body>
+  <div>
+
+    <div class="navbar">
+      <div class="loginreg"><h1>Assignment-2</h1></div>
+      <ul>
+        <li><a href="#home">Home</a></li>
+        <li><a href="#about">About Us</a></li>
+        <li><a href="#contact">Contact Us</a></li>
+        <li><a href="#gallery">Gallery</a></li>
+      </ul>
+      <div class="loginreg">
+        <p><a href="index.html">Login</a></p>
+      </div>
+    </div>
+    <div class="main2">
+      <video src="video2.mp4" autoplay loop muted></video>
+   
+      <div class="main">
+        <div class="boxes" onclick="scaleup()"><img src="img/image.jpeg" alt=""></div>
+        <div class="boxes"><img src="img/image (29).jpg" alt=""></div>
+        <div class="boxes"><img src="img/image (28).jpg" alt=""></div>
+        <div class="boxes"><img src="img/image (27).jpg" alt=""></div>
+        <div class="boxes"><img src="img/image (26).jpg" alt=""></div>
+        <div class="boxes"><img src="img/image (1).avif" alt=""></div>
+        <div class="boxes"><img src="img/image (2).avif" alt=""></div>
+        <div class="boxes"><img src="img/image (3).avif" alt=""></div>
+        <div class="boxes"><img src="img/image (4).avif" alt=""></div>
+        <div class="boxes"><img src="img/image (5).avif" alt=""></div>
+        <div class="boxes"><img src="img/image (6).avif" alt=""></div>
+        <div class="boxes"><img src="img/image (7).avif" alt=""></div>
+        <div class="boxes"><img src="img/image (8).avif" alt=""></div>
+        <div class="boxes"><img src="img/image (40).jpg" alt=""></div>
+        <div class="boxes"><img src="img/image (41).jpg" alt=""></div>
+        <div class="boxes"><img src="img/image (42).jpg" alt=""></div>
+        <div class="boxes"><img src="img/image (43).jpg" alt=""></div>
+        <div class="boxes"><img src="img/image (44).jpg" alt=""></div>
+        <div class="boxes"><img src="img/image (45).jpg" alt=""></div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    var cursor = document.querySelector(".cursor");
+    window.addEventListener("mousemove", function (e){
+      cursor.style.top = e.y + "px";
+      cursor.style.left = e.x + "px";
+     })
+  </script>
+
+</body>
+
+</html>
